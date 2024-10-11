@@ -5,6 +5,8 @@ not_primes = []
 
 # Создаём перебор
 for num in numbers:
+    if num == 1: # Раз число особенное исключим его из вывода
+        continue
     is_prime = True
     if num < 2:
         is_prime = False
