@@ -9,7 +9,7 @@ def generate_password(n):
 
     # Генерация уникальных пар
     for i in range(1, n // 2 + 1):  # Первая половина
-        for j in range(i+1):  # Вторая половина
+        for j in range(i, n + 1):  # Вторая половина
             if i < j:  # Уникальность пар
                 pair_sum = i + j
                 if n % pair_sum == 0:  # Проверка кратности
@@ -18,7 +18,6 @@ def generate_password(n):
     # Сортируем пары и формируем пароль
     for pair in sorted(unique_pairs):
         password += pair
-
     return password
 
 # Основная часть программы
