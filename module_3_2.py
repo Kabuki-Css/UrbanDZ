@@ -1,7 +1,7 @@
-def send_email(message, recipient, sender="university.help@gmail.com"):# Функция для работы 
+def send_email(message, recipient,*, sender="university.help@gmail.com"):# Функция для работы 
      
      # Логика действия 
-     if not (("@" in sender) and (("@" in recipient) or (recipient.endswith(".com", ".ru", ".net")))): #задаём условие при ктором будет выполнятся то или иное действие
+     if "@" not in sender or "@" not in recipient or not (sender.endswith(".com") or sender.endswith(".ru") or sender.endswith(".net")) or not (recipient.endswith(".com") or recipient.endswith(".ru") or recipient.endswith(".net")): #задаём условие при ктором будет выполнятся то или иное действие
 
         # действия
         print("Невозможно отправить письмо с адреса <" + sender + "> на адрес <" + recipient + ">.")
@@ -17,6 +17,6 @@ def send_email(message, recipient, sender="university.help@gmail.com"):# Фун�
         return
      # Обработка функции
 
-send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', sender='urban.info@gmail.com')
+send_email('Напоминаю самому себе о вебинаре', 'urban.teacher@mail.ru', sender='urban.teacher@mail.ru')
 
 
