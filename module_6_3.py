@@ -55,7 +55,7 @@ class PoisonousAnimal(Animal):
 
 
 # Класс Duckbill (наследуется от Bird, AquaticAnimal и PoisonousAnimal)
-class Duckbill(Bird, AquaticAnimal, PoisonousAnimal):
+class Duckbill(PoisonousAnimal, AquaticAnimal, Bird):
     sound = "Click-click-click"
     
     def __init__(self, speed):
@@ -78,3 +78,5 @@ db.dive_in(6)  # Погружаемся в воду, уменьшаем Z
 db.get_cords()  # X: 10 Y: 20 Z: 0
 
 db.lay_eggs()  # Откладываем яйца
+db = Duckbill(10)
+db.attack()
